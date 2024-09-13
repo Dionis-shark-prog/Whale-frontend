@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Add</title>
+</head>
+
+<body>
+   <div class="add-goods-form">
+      {{if .}}
+      <p>{{.}}</p>
+      {{end}}
+      <h2>ADD NEW PRODUCT</h2>
+      <form action="/addcomplete" method="POST" enctype="multipart/form-data">
+         <label for="title">Title:</label><br>
+         <input type="text" name="title" id="title" class="add-goods-inputs"><br><br>
+         <label for="price">Price:</label><br>
+         <input type="text" name="price" id="price" class="add-goods-inputs"><br><br>
+         <label for="description">Description:</label><br>
+         <textarea name="description" id="description" rows="15" cols="40" class="add-goods-inputs"></textarea><br><br>
+         <label for="count">Count:</label><br>
+         <input type="number" name="count" id="count" class="add-goods-inputs"><br><br>
+         <label for="goods-photo">Photos:</label><br>
+         <input type="file" accept="image/png, image/jpeg" name="file" id="file" multiple><br><br>
+         <input type="submit" value="Add" class="admin-buttons">
+         <a href="/admin">
+            <button type="button" class="admin-buttons">Cancel</button>
+         </a>
+      </form>
+   </div>
+
+   <link rel="stylesheet" href="http://localhost:8080/static/css/addgoods.css">
+   <script>
+      document.querySelector('#count').addEventListener('change', ({ target }) => {
+         if (target.value < 1) {
+            target.innerHTML = 1;
+            target.value = 1;
+         }
+      });
+   </script>
+</body>
+
+</html>

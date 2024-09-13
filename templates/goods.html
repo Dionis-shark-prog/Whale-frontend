@@ -1,0 +1,54 @@
+{{define "title"}}{{.ProdInfo.Title}}{{end}}
+{{define "main"}}
+<div id="if_prod_in_cart">
+   <h4>Current product is already in cart!</h4>
+</div>
+<div class="product-content-page">
+   <div class="product-content image-content">
+      <div class="current-image">
+         <div class="image-frame">
+            <img src="http://localhost:8000/images/{{index .ProdInfo.ImagesUrls 0}}" alt="" class="current-image"
+               id="current-image">
+         </div>
+         <div class="image-viewer">
+            {{range .ProdInfo.ImagesUrls}}
+            <div class="additional-images">
+               <img src="http://localhost:8000/images/{{.}}" alt="" class="add-images" onclick="changeImage(this)">
+            </div>
+            {{end}}
+         </div>
+      </div>
+   </div>
+   <div class="product-content info-content">
+      <h2 class="title-info">{{.ProdInfo.Title}}</h2>
+      <p class="description-info">{{.ProdInfo.Description}}</p>
+      <p class="price-info">${{.ProdInfo.Price}}</p>
+      {{if ne .ProdInfo.Count 0}}
+      <a href="/cartbuy?id={{.ProdInfo.ID}}">
+         <button type="button" class="add-to-cart-button">Add to cart</button>
+      </a>
+      {{else}}
+      <p class="not-avaible-info">Not avaible</p>
+      {{end}}
+   </div>
+
+</div>
+<link rel="stylesheet" href="http://localhost:8080/static/css/goods.css">
+
+<script>
+   document.addEventListener('DOMContentLoaded', (Event) => {
+      const if_prod_in_cart = document.getElementById('if_prod_in_cart')
+      url = window.location.search
+      paramIn = new URLSearchParams(url);
+
+      if (paramIn.get('r') === 'isincart') {
+         setTimeout(() => { if_prod_in_cart.style.transform = 'translateY(0)'; }, 200);
+         setTimeout(() => { if_prod_in_cart.style.transform = 'translateY(-120%)'; }, 2500);
+      }
+   });
+   function changeImage(element) {
+      var mainImage = document.getElementById("current-image");
+      mainImage.src = element.src;
+   }
+</script>
+{{end}}

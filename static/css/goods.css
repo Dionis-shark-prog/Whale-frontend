@@ -1,0 +1,92 @@
+body {
+   font-family: 'arial';
+}
+
+.product-content-page {
+   width: auto;
+   height: auto;
+   margin: 30px;
+   margin-top: 90px;
+   min-height: 420px;
+   padding: 10px;
+   border: 2px solid black;
+   display: flex;
+}
+
+#if_prod_in_cart {
+   width: 50%;
+   top: 10px;
+   left: 25%;
+   right: 25%;
+   margin: auto;
+   position: absolute;
+   font-family: 'arial';
+   color: aliceblue;
+   text-align: center;
+   background-color: red;
+   margin-top: auto;
+   margin-bottom: auto;
+   transform: translateY(-120%);
+}
+
+.product-content {
+   width: 50%;
+   padding: 10px;
+   margin: 5px;
+}
+
+.description-info {
+   white-space: pre-wrap;
+}
+
+.price-info {
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.add-to-cart-button {
+   width: 100%;
+   height: 30px;
+   border: 2px solid black;
+   border-radius: 4px;
+   font-size: 20px;
+}
+
+.image-content {
+   justify-content: center;
+   display: flex;
+}
+
+.image-frame {
+   height: 280px;
+   width: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 10px;
+}
+
+.current-image {
+   max-width: 399px;
+   max-height: 280px;
+}
+
+.image-viewer {
+   height: 90px;
+   width: 400px;
+   display: flex;
+   text-align: center;
+   overflow-x: auto;
+   overflow-y: hidden;
+   white-space: nowrap;
+}
+
+.additional-images {
+   height: 69px;
+   display: inline;
+   padding: 2px;
+}
+
+.add-images {
+   height: 69px;
+}

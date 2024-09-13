@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Admin</title>
+</head>
+
+<body>
+   <div class="admin-form">
+      {{if .}}
+      <p>{{.}}</p>
+      {{end}}
+      <h2>ADMIN PAGE</h2><br>
+
+      <form action="/authadmincomplete" method="POST">
+         <label for="admin">Admin:</label><br>
+         <input type="text" id="adminname" name="adminname" class="admin-input"><br><br>
+         <label for="password">Password:</label><br>
+         <input type="password" id="password" name="password" class="admin-input"><br><br>
+         <input type="submit" value="Submit" class="admin-buttons submit-btn-admin">
+         <a href="/shop">
+            <button type="button" class="admin-buttons submit-btn-admin">Cancel</button>
+         </a>
+      </form>
+      <br><br>
+   </div>
+   <link rel="stylesheet" href="http://localhost:8080/static/css/admin.css">
+</body>
+
+</html>

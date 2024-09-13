@@ -1,0 +1,41 @@
+body {
+   font-family: 'arial';
+}
+
+.in-form {
+   width: 350px;
+   height: auto;
+   margin: auto;
+   margin-top: 30px;
+   padding: 60px;
+   padding-bottom: 40px;
+   padding-top: 15px;
+   border: 2px solid rgb(94, 94, 94);
+   font-family: 'arial';
+   border-radius: 3%;
+   background-color: rgb(225, 225, 225);
+}
+
+.in-input {
+   border: 2px solid rgb(141, 141, 141);
+   font-size: 20px;
+   border-radius: 4px;
+}
+
+.in-buttons {
+   font-size: 20px;
+   border: 2px solid rgb(75, 43, 43);
+   border-radius: 4px;
+}
+
+.cancel-btn-login {
+   position: relative;
+   top: -30px;
+   left: 95px;
+}
+
+.cancel-btn-signup {
+   position: relative;
+   top: -29px;
+   left: 95px;
+}

@@ -1,0 +1,58 @@
+body {
+   font-family: 'arial';
+}
+
+table {
+   width: 100%;
+   border: 1px solid black;
+}
+
+.cart-container {
+   width: 700px;
+   height: auto;
+   margin: auto;
+   border: 2px solid black;
+   padding: 20px;
+}
+
+.product-image {
+   width: auto;
+   height: 160px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   img {
+      max-width: 200px;
+   }
+}
+
+.delete-button {
+   font-size: 20px;
+   border: 2px solid rgb(75, 43, 43);
+   border-radius: 4px;
+   background-color: red;
+   color: white;
+}
+
+.cart-buttons {
+   font-size: 20px;
+   border: 2px solid rgb(75, 43, 43);
+   border-radius: 4px;
+   margin-top: 10px;
+   margin-right: 5px;
+}
+
+.head-row {
+   border: 1px solid black;
+}
+
+.body-row {
+   border: 1px solid black;
+}
+
+#quantity {
+   border: 2px solid rgb(141, 141, 141);
+   font-size: 20px;
+   border-radius: 4px;
+}

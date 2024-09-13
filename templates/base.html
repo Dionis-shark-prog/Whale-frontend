@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--#region head-->
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{block "title" .}}Default title{{end}}</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!--#endregion-->
+
+<body>
+   <!--#region header-->
+   <header>
+      <!-- #region hat -->
+      <div class="fixed-on-top">
+         <button class="mainbuttons menubutton" id="menuButton" type="button">
+            <i class="fa fa-bars whiteicons"></i>
+         </button>
+         {{if .IsAuthenticated}}
+         <a href="/profile">
+            <div class="profile-image">
+               <img src="http://localhost:8080/static/img/icon-profile.png" alt="">
+            </div>
+         </a>
+         {{else}}
+         <a href="/login">
+            <button type="button" class="login-button-hat">LOG IN</button>
+         </a>
+         {{end}}
+         <a href="/cart">
+            <button type="button" class="mainbuttons cartbutton">VIEW CART</button>
+         </a>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region menu -->
+      <div id="menuWindow" class="menu-window">
+         <div class="close-menu-field">
+            <button class="button-menu-close" id="menuButtonClose">
+               <i class="fa fa-bars whiteicons"></i>
+            </button>
+         </div>
+         <div class="mainmenu">
+            <a class="mainmenu-item" href="/shop">MAIN</a>
+            <a class="mainmenu-item" href="/about">ABOUT US</a><br>
+            {{if .IsAuthenticated}}
+            <a class="mainmenu-item" href="/logout" style="color: red;">LOG OUT</a>
+            <a class="mainmenu-item" href="/login" style="color: red;">CHANGE ACCOUNT</a>
+            <a class="mainmenu-item" href="/deleteaccount" style="color: red;">DELETE ACCOUNT</a>
+            {{else}}
+            <a class="mainmenu-item" href="/login" style="color: red;">LOG IN</a>
+            <a class="mainmenu-item" href="/signup" style="color: red;">SIGN UP</a>
+            {{end}}
+         </div>
+      </div>
+      <!-- #endregion -->
+
+      <div id="successfullIn">
+         <h4>You successfully loged in!</h4>
+      </div>
+   </header>
+   <!--#endregion-->
+
+   <!--#region main-->
+   <main>
+      {{block "main" .}}
+
+      {{end}}
+   </main>
+   <!--#endregion-->
+   <link rel="stylesheet" href="http://localhost:8080/static/css/style.css">
+   <script src="http://localhost:8080/static/js/main.js"></script>
+</body>
+
+</html>

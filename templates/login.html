@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Log In</title>
+</head>
+
+<body>
+   <main>
+      <div class="in-form">
+         {{if .}}
+         <p>{{.}}</p>
+         {{end}}
+         <h2>LOG IN</h2><br>
+
+         <form action="/logincomplete" method="POST">
+            <label for="firstname">Firstname*:</label><br>
+            <input type="text" id="firstname" name="firstname" class="in-input"><br><br>
+            <label for="email">E-mail*:</label><br>
+            <input type="email" id="email" name="email" class="in-input"><br><br>
+            <label for="password">Password*:</label><br>
+            <input type="password" id="password" name="password" class="in-input"><br><br>
+            <input type="submit" value="Submit" class="in-buttons submit-btn-login">
+            <a href="/shop">
+               <button type="button" class="in-buttons">Cancel</button>
+            </a>
+            <p>You have no account yet?</p>
+            <a href="/signup">
+               <button type="button" class="in-buttons createacc-button-login">Create Account</button>
+            </a>
+         </form>
+
+      </div>
+   </main>
+   <link rel="stylesheet" href="http://localhost:8080/static/css/infrom.css">
+</body>
+
+</html>

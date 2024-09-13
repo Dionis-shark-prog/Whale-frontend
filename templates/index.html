@@ -1,0 +1,36 @@
+{{define "title"}}Shop{{end}}
+{{define "main"}}
+<div class="simple">
+   {{if .Info}}
+   {{range .Info}}
+   {{if eq .Count 0}}
+   <a href="/shop/goods?number={{.ID}}" class="main-goods-hrefs">
+      <div class="productInStore notAvaible">
+         <div class="product-image">
+            <img src="http://localhost:8000/images/{{index .ImagesUrls 0}}" alt="" class="prod-image">
+         </div>
+         <div class="div-title">
+            <p class="title">{{.Title}} (NOT AVAIBLE)</p>
+         </div>
+         <p class="price">$ {{.Price}}</p>
+      </div>
+   </a>
+   {{else}}
+   <a href="/shop/goods?number={{.ID}}" class="main-goods-hrefs">
+      <div class="productInStore">
+         <div class="product-image">
+            <img src="http://localhost:8000/images/{{index .ImagesUrls 0}}" alt="" class="prod-image">
+         </div>
+         <div class="div-title">
+            <p class="title">{{.Title}}</p>
+         </div>
+         <p class="price">$ {{.Price}}</p>
+      </div>
+   </a>
+   {{end}}
+   {{end}}
+   {{else}}
+   <p>Empty shop</p>
+   {{end}}
+</div>
+{{end}}

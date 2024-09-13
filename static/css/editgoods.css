@@ -1,0 +1,24 @@
+body {
+   font-family: 'arial';
+}
+
+.edit-goods-form {
+   width: 500px;
+   padding: 35px;
+   border: 2px solid black;
+   border-radius: 10px;
+   margin: auto;
+   background-color: rgb(227, 227, 227);
+}
+
+.edit-goods-inputs {
+   border: 2px solid rgb(141, 141, 141);
+   font-size: 20px;
+   border-radius: 4px;
+}
+
+.admin-buttons {
+   font-size: 20px;
+   border: 2px solid rgb(75, 43, 43);
+   border-radius: 4px;
+}

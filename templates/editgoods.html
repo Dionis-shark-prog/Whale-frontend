@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Edit</title>
+</head>
+
+<body>
+   <div class="edit-goods-form">
+      <h2>EDIT PRODUCT</h2>
+      <form action="/editcomplete?p={{.ID}}" method="POST">
+         <label for="title">Title:</label><br>
+         <input type="text" name="title" id="title" value="{{.Title}}" class="edit-goods-inputs"><br><br>
+         <label for="price">Price:</label><br>
+         <input type="text" name="price" id="price" value="{{.Price}}" class="edit-goods-inputs"><br><br>
+         <label for="description">Description:</label><br>
+         <textarea name="description" id="description" rows="15" cols="40"
+            class="edit-goods-inputs">{{.Description}}</textarea><br><br>
+         <label for="count">Count:</label><br>
+         <input type="number" name="count" id="count" value="{{.Count}}" class="edit-goods-inputs"><br><br>
+         <input type="submit" value="Edit" class="admin-buttons">
+         <a href="/admin">
+            <button type="button" class="admin-buttons">Cancel</button>
+         </a>
+      </form>
+   </div>
+   <link rel="stylesheet" href="http://localhost:8080/static/css/editgoods.css">
+</body>
+
+</html>

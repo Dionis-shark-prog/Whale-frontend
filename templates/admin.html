@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Admin main</title>
+</head>
+
+<body>
+   <div class="admin-header">
+      <h2>Admin panel</h2>
+      <a href="/exitadmin">
+         <button type="button" class="admin-panel-buttons exit-panel-buttons">Exit admin account</button>
+      </a>
+      <a href="/shop">
+         <button type="button" class="admin-panel-buttons exit-panel-buttons">To Shop</button>
+      </a>
+   </div>
+   {{if .}}
+   <div class="goods-container">
+      <a href="/addgoods">
+         <button type="button" class="admin-panel-buttons add-product-button">Add new product</button>
+      </a>
+      <table style="width: 100%;">
+         <thead class="thead">
+            <tr class="head-row">
+               <th colspan="2" style="width: 40%;">Title</th>
+               <th style="width: 10%;">Price</th>
+               <th style="width: 35%;">Description</th>
+               <th style="width: 5%;">Count</th>
+               <th style="width: 10%;"></th>
+            </tr>
+         </thead>
+         <tbody class="tbody">
+            {{range .Products}}
+            <tr class="body-row">
+               <th>
+                  <div class="product-image"><img src="http://localhost:8000/images/{{index .ImagesUrls 0}}"></div>
+               </th>
+               <th>{{.Title}}</th>
+               <th class="price">{{.Price}}</th>
+               <th class="description" style="white-space: pre-wrap;">{{.Description}}</th>
+               <th class="count">{{.Count}}</th>
+               <th>
+                  <a href="/adminedit?p={{.ID}}">
+                     <button type="button" class="admin-panel-buttons edit-button">Edit product</button>
+                  </a>
+                  <a href="/admindelete?p={{.ID}}">
+                     <button type="button" class="admin-panel-buttons delete-button">Delete product</button>
+                  </a>
+               </th>
+            </tr>
+            {{end}}
+         </tbody>
+      </table>
+   </div>
+   {{else}}
+   <p>Something wrong</p>
+   {{end}}
+   <link rel="stylesheet" href="http://localhost:8080/static/css/admin.css">
+</body>
+
+</html>
